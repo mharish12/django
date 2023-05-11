@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Open File</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>File Contents</h1>
-    {% if data %}
+    {% if file %}
     <table>
-        {% for row in data %}
-        <tr>
-            {% for value in row %}
-            <td>{{ value }}</td>
-            {% endfor %}
-        </tr>
+      {% for row in file %}
+      <tr>
+        {% for value in row %}
+        <td>{{ value }}</td>
         {% endfor %}
+      </tr>
+      {% endfor %}
     </table>
     {% else %}
     <p>No data to display.</p>
     {% endif %}
-</body>
-
+  </body>
 </html>

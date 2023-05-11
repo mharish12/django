@@ -7,6 +7,18 @@ $ django-venv/bin/activate // for windows
 ```
 
 ```
+$ pip install django
+or
+$ pip3 install django
+```
+
+```
+$ pip install pandas
+or
+$ pip3 install pandas
+```
+
+```
 $ cd file_upload_app
 ```
 

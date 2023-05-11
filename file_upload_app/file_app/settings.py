@@ -1,1 +1,1 @@
-MEDIA_ROOT = "media/"
+# MEDIA_ROOT = "media/"

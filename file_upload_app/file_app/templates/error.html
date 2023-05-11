@@ -1,0 +1,13 @@
+{% extends 'base.html' %} 
+
+{% block title %}ERROR HTML{% endblock %} 
+
+{% block content %}
+<h1>Error file</h1>
+{% if exception %}
+<div>{{ exception.exception }}</div>
+{% else %}
+<li>Exception but no exception message to show.</li>
+{% endif %}
+<p>Error while processing.</p>
+{% endblock %}
