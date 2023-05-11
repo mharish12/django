@@ -1,0 +1,22 @@
+{% extends 'fileupload/base.html' %}
+
+{% block title %}Admin panel{% endblock %}
+
+{% block content %}
+<h1>Admin panel</h1>
+{% if messages %}
+<ul>
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+        {% endfor %}
+</ul>
+{% endif %}
+<form method="post">
+    {% csrf_token %}
+    <label for="username">Username:</label>
+    <input type="text" name="username" required><br><br>
+    <label for="password">Password:</label>
+    <input type="password" name="password" required><br><br>
+    <input type="submit" value="Login">
+</form>
+{% endblock %}

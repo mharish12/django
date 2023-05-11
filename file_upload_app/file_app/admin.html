@@ -1,0 +1,28 @@
+{% extends 'fileupload/base.html' %}
+
+{% block title %}Admin panel{% endblock %}
+
+{% block content %}
+<h1>Admin panel</h1>
+{% if files %}
+<table>
+    <tr>
+        <th>S.No.</th>
+        <th>File</th>
+        <th>Action</th>
+    </tr>
+    {% for file in files %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ file.filename }}</td>
+        <td>
+            <a href="{% url 'download' file.filename %}">Download</a>
+            <a href="{% url 'open_file' file.filename %}">Open</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>No files uploaded yet.</p>
+{% endif %}
+{% endblock %}
