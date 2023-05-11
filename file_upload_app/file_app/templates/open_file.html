@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Open File</title>
+</head>
+
+<body>
+    <h1>File Contents</h1>
+    {% if data %}
+    <table>
+        {% for row in data %}
+        <tr>
+            {% for value in row %}
+            <td>{{ value }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>No data to display.</p>
+    {% endif %}
+</body>
+
+</html>

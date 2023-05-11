@@ -29,14 +29,10 @@ def admin_login(request):
 @login_required(login_url='/admin/')
 def admin_panel(request):
     files = []
-    try:
-        for file_name in os.listdir(settings.MEDIA_ROOT):
-            if file_name.endswith('.csv') or file_name.endswith('.xlsx'):
-                file_path = os.path.join(settings.MEDIA_ROOT, file_name)
-                files.append((file_name, os.path.getsize(file_path)))
-    except Exception as e:
-        files.append(e)
-
+    for file_name in os.listdir(settings.MEDIA_ROOT):
+        if file_name.endswith('.csv') or file_name.endswith('.xlsx'):
+            file_path = os.path.join(settings.MEDIA_ROOT, file_name)
+            files.append((file_name, os.path.getsize(file_path)))
     return render(request, 'admin.html', {'files': files})
 
 @login_required(login_url='/admin/')

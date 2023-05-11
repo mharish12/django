@@ -1,4 +1,4 @@
-{% extends 'fileupload/base.html' %}
+{% extends 'base.html' %}
 
 {% block title %}Admin panel{% endblock %}
 
@@ -16,7 +16,7 @@
         <td>{{ forloop.counter }}</td>
         <td>{{ file.filename }}</td>
         <td>
-            <a href="{% url 'download' file.filename %}">Download</a>
+            <a href="{% url 'download_file' file.filename %}">Download</a>
             <a href="{% url 'open_file' file.filename %}">Open</a>
         </td>
     </tr>
