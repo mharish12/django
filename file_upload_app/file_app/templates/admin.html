@@ -17,10 +17,10 @@
   {% for file in files %}
   <tr>
     <td>{{ forloop.counter }}</td>
-    <td>{{ file.filename }}</td>
+    <td>{{ file.file_name }}</td>
     <td>
-      <a href="{% url 'download' file=file.filename %}">Download</a>
-      <a href="{% url 'open_file' file=file.filename %}">Open</a>
+      <a href="{% url 'download_file' file=file.file_name %}">Download</a>
+      <a href="{% url 'open_file' file=file.file_name %}">Open</a>
     </td>
   </tr>
   {% endfor %}

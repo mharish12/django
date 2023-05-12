@@ -6,16 +6,9 @@
 
   <body>
     <h1>File Contents</h1>
-    {% if file %}
-    <table>
-      {% for row in file %}
-      <tr>
-        {% for value in row %}
-        <td>{{ value }}</td>
-        {% endfor %}
-      </tr>
-      {% endfor %}
-    </table>
+    {% if table_html %}
+
+    <div>{{ table_html | safe}}</div>
     {% else %}
     <p>No data to display.</p>
     {% endif %}
